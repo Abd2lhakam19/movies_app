@@ -13,7 +13,7 @@ class SliderContent extends StatelessWidget {
       children: [
         Column(
           children: [
-            Container(
+            SizedBox(
               width: double.infinity,
               height: 190.h,
               child: Image.asset(

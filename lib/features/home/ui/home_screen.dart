@@ -1,4 +1,6 @@
 import 'package:application/core/helper/spacing.dart';
+import 'package:application/features/home/ui/wigets/new_releases/new_releases_section.dart';
+import 'package:application/features/home/ui/wigets/recomended/recomended_section.dart';
 import 'package:flutter/material.dart';
 
 import 'wigets/slider/top_home_slider.dart';
@@ -15,6 +17,10 @@ class HomeScreen extends StatelessWidget {
             children: [
               verticalSpace(13),
               const TopHomeSlider(),
+              verticalSpace(24),
+              const NewReleasesSection(),
+              verticalSpace(30),
+              const RecomendedSection(),
             ],
           ),
         ),

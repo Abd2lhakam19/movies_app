@@ -5,5 +5,6 @@ class AppColors {
       lightGrey = Color(0xff282A28),
       white = Color(0xffffffff),
       yellowColor = Color(0xffF7B539),
-      lighterGrey = Color(0xffB5B4B4);
+      lighterGrey = Color(0xffB5B4B4),
+      moreLightGrey = Color(0xff343534);
 }
