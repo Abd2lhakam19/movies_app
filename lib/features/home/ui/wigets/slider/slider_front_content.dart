@@ -1,5 +1,4 @@
 import 'package:application/core/helper/spacing.dart';
-import 'package:application/core/theming/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
