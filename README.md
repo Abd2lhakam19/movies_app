@@ -1,16 +1,10 @@
-# application
+# Movie App 
 
-A new Flutter project.
+A new Flutter project displaying movies with a lot of features 
+ Desing
+  ▶️ Splash Screen 
+  ![splash_screen](https://github.com/Abd2lhakam19/movies_app/assets/105023622/d0a39c69-4916-4100-8f56-e08a426b0085)
 
-## Getting Started
+  ▶️ Home Screen 
+  ![home_screen](https://github.com/Abd2lhakam19/movies_app/assets/105023622/2648551a-fe6b-4bbc-898b-18873fc7028f)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
