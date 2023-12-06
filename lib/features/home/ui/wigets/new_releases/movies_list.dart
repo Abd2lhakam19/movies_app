@@ -19,12 +19,13 @@ class MoviesList extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
                 SizedBox(
-                    height: 36.h,
-                    width: 27.w,
-                    child: Image.asset(
-                      AppAssets.bookMark,
-                      fit: BoxFit.cover,
-                    ))
+                  height: 36.h,
+                  width: 27.w,
+                  child: Image.asset(
+                    AppAssets.bookMark,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ],
             );
           },
