@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
               verticalSpace(13),
               const TopHomeSlider(),
               verticalSpace(24),
-              const NewReleasesSection(),
+              NewReleasesSection(),
               verticalSpace(30),
               const RecomendedSection(),
             ],

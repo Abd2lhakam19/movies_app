@@ -3,5 +3,6 @@ class ApiConstants {
       baseUrl = "api.themoviedb.org",
       popularApi = '3/movie/now_playing',
       baseImage = "https://image.tmdb.org/t/p/w500",
-      recomendedApi = "/3/movie/top_rated";
+      recomendedApi = "/3/movie/top_rated",
+      newReleasesApi = "/3/movie/upcoming";
 }
