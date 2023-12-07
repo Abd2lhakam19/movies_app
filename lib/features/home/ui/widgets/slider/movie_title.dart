@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import '../../../../../core/theming/text_styles.dart';
 
 class MovieTitle extends StatelessWidget {
-  MovieTitle({super.key, this.results});
-  Results? results;
+  const MovieTitle({super.key, this.results});
+  final Results? results;
 
   @override
   Widget build(BuildContext context) {

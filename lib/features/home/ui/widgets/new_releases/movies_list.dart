@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MoviesList extends StatelessWidget {
-  MoviesList(this.results);
-  List<Results>? results;
+  const MoviesList({super.key, this.results});
+  final List<Results>? results;
 
   @override
   Widget build(BuildContext context) {

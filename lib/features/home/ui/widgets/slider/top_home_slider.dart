@@ -19,7 +19,6 @@ class _TopHomeSliderState extends State<TopHomeSlider> {
   var sliderCubit = SliderCubit();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     sliderCubit.getPopularMovies();
   }
@@ -56,8 +55,8 @@ class _TopHomeSliderState extends State<TopHomeSlider> {
                   initialPage: 0,
                   enableInfiniteScroll: true,
                   reverse: false,
-                  autoPlay: false,
-                  autoPlayInterval: const Duration(seconds: 2),
+                  autoPlay: true,
+                  autoPlayInterval: const Duration(seconds: 3),
                   enlargeCenterPage: true,
                   enlargeFactor: 0.3,
                   onPageChanged: (index, reason) {},

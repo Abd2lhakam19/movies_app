@@ -1,4 +1,3 @@
-import 'package:application/core/helper/app_assets.dart';
 import 'package:application/features/home/data/models/popular_response.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +7,8 @@ import '../../../../../core/helper/api_constants.dart';
 import 'slider_front_content.dart';
 
 class SliderContent extends StatelessWidget {
-  SliderContent({super.key, this.results});
-  Results? results;
+  const SliderContent({super.key, this.results});
+  final Results? results;
 
   @override
   Widget build(BuildContext context) {

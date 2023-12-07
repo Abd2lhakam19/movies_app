@@ -10,7 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NewReleasesSection extends StatefulWidget {
-  NewReleasesSection({super.key});
+  const NewReleasesSection({super.key});
 
   @override
   State<NewReleasesSection> createState() => _NewReleasesSectionState();
@@ -20,7 +20,6 @@ class _NewReleasesSectionState extends State<NewReleasesSection> {
   var newReleasesCubit = NewReleasesCubit();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     newReleasesCubit.getNewReleasesMovies();
   }
@@ -55,7 +54,7 @@ class _NewReleasesSectionState extends State<NewReleasesSection> {
                       style: TextStyles.font15WhiteRegular,
                     ),
                     verticalSpace(14),
-                    MoviesList(result),
+                    MoviesList(results: result),
                   ],
                 ),
               );
@@ -77,22 +76,3 @@ class _NewReleasesSectionState extends State<NewReleasesSection> {
     );
   }
 }
-/* 
-Container(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
-      height: 187.h,
-      width: double.infinity.w,
-      decoration: const BoxDecoration(color: AppColors.lightGrey),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            AppStrings.newReleases,
-            style: TextStyles.font15WhiteRegular,
-          ),
-          verticalSpace(14),
-           MoviesList()
-        ],
-      ),
-    );
-*/

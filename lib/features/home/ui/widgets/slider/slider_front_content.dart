@@ -9,8 +9,8 @@ import '../../../../../core/helper/app_assets.dart';
 import 'movie_title.dart';
 
 class SLiderFrontContent extends StatelessWidget {
-  SLiderFrontContent({super.key, this.results});
-  Results? results;
+  const SLiderFrontContent({super.key, this.results});
+  final Results? results;
   @override
   Widget build(BuildContext context) {
     return Row(

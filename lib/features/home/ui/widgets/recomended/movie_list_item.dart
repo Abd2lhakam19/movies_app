@@ -10,8 +10,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/helper/api_constants.dart';
 
 class MovieListItem extends StatelessWidget {
-  MovieListItem({super.key, this.results});
-  Results? results;
+  const MovieListItem({super.key, this.results});
+  final Results? results;
 
   @override
   Widget build(BuildContext context) {

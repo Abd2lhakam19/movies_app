@@ -18,7 +18,6 @@ class _RecomendedMoviesListState extends State<RecomendedMoviesList> {
   var recomendedCubit = RecomendedCubit();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     recomendedCubit.getRecomendedMovies();
   }
@@ -70,15 +69,3 @@ class _RecomendedMoviesListState extends State<RecomendedMoviesList> {
     );
   }
 }
-/*
-Expanded(
-      child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) => const MovieListItem(),
-          separatorBuilder: (context, index) => const VerticalDivider(
-                thickness: 2,
-                color: Colors.transparent,
-              ),
-          itemCount: 10),
-    );
-*/ 
