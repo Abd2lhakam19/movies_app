@@ -1,11 +1,15 @@
 import 'package:application/core/helper/app_assets.dart';
+import 'package:application/features/home/data/models/popular_response.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/helper/api_constants.dart';
 import 'slider_front_content.dart';
 
 class SliderContent extends StatelessWidget {
-  const SliderContent({super.key});
+  SliderContent({super.key, this.results});
+  Results? results;
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +20,19 @@ class SliderContent extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               height: 190.h,
-              child: Image.asset(
-                AppAssets.doraSliderBack,
+              child: CachedNetworkImage(
                 fit: BoxFit.cover,
+                imageUrl: ApiConstants.baseImage + results!.backdropPath!,
+                placeholder: (context, url) =>
+                    const Center(child: CircularProgressIndicator()),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
           ],
         ),
-        const SLiderFrontContent()
+        SLiderFrontContent(
+          results: results,
+        )
       ],
     );
   }

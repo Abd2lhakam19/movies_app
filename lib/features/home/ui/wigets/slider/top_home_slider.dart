@@ -1,32 +1,77 @@
+import 'package:application/core/theming/app_colors.dart';
+import 'package:application/features/home/logic/cubit/home_cubit.dart';
+import 'package:application/features/home/logic/cubit/home_cubit_states.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'slider_content.dart';
 
-class TopHomeSlider extends StatelessWidget {
+class TopHomeSlider extends StatefulWidget {
   const TopHomeSlider({super.key});
 
   @override
+  State<TopHomeSlider> createState() => _TopHomeSliderState();
+}
+
+class _TopHomeSliderState extends State<TopHomeSlider> {
+  var homeCubit = HomeCubit();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    homeCubit.getPopularMovies();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return CarouselSlider.builder(
-      itemCount: 15,
-      itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) {
-        return const SliderContent();
+    return BlocBuilder<HomeCubit, HomeStates>(
+      bloc: homeCubit,
+      builder: (context, state) {
+        switch (state) {
+          case LodaingState():
+            {
+              return const Center(
+                child: CircularProgressIndicator(
+                  color: AppColors.yellowColor,
+                ),
+              );
+            }
+          case SuccessState():
+            {
+              var result = state.resultList;
+              return CarouselSlider.builder(
+                itemCount: result.length,
+                itemBuilder:
+                    (BuildContext context, int itemIndex, int pageViewIndex) {
+                  return SliderContent(
+                    results: result[itemIndex],
+                  );
+                },
+                options: CarouselOptions(
+                  height: 250,
+                  aspectRatio: 16 / 9,
+                  viewportFraction: 0.8,
+                  initialPage: 0,
+                  enableInfiniteScroll: true,
+                  reverse: false,
+                  autoPlay: false,
+                  autoPlayInterval: const Duration(seconds: 2),
+                  enlargeCenterPage: true,
+                  enlargeFactor: 0.3,
+                  onPageChanged: (index, reason) {},
+                  scrollDirection: Axis.horizontal,
+                ),
+              );
+            }
+          case ErrorState():
+            {
+              return Center(
+                child: Text(state.errorMessage),
+              );
+            }
+        }
       },
-      options: CarouselOptions(
-        height: 250,
-        aspectRatio: 16 / 9,
-        viewportFraction: 0.8,
-        initialPage: 0,
-        enableInfiniteScroll: true,
-        reverse: false,
-        autoPlay: false,
-        autoPlayInterval: const Duration(seconds: 2),
-        enlargeCenterPage: true,
-        enlargeFactor: 0.3,
-        onPageChanged: (index, reason) {},
-        scrollDirection: Axis.horizontal,
-      ),
     );
   }
 }
