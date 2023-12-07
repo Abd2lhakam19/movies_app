@@ -2,11 +2,16 @@ import 'package:application/core/helper/app_assets.dart';
 import 'package:application/core/helper/spacing.dart';
 import 'package:application/core/theming/app_colors.dart';
 import 'package:application/core/theming/text_styles.dart';
+import 'package:application/features/home/data/models/recomended_response.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/helper/api_constants.dart';
+
 class MovieListItem extends StatelessWidget {
-  const MovieListItem({super.key});
+  const MovieListItem({super.key, this.results});
+  final Results? results;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +23,13 @@ class MovieListItem extends StatelessWidget {
           color: AppColors.moreLightGrey,
           child: Column(
             children: [
-              Image.asset(AppAssets.doraSliderFront),
+              CachedNetworkImage(
+                fit: BoxFit.cover,
+                imageUrl: ApiConstants.baseImage + results!.posterPath!,
+                placeholder: (context, url) =>
+                    const Center(child: CircularProgressIndicator()),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
+              ),
               verticalSpace(6),
               Padding(
                 padding: const EdgeInsets.only(left: 6),
@@ -34,21 +45,21 @@ class MovieListItem extends StatelessWidget {
                         ),
                         horizontalSpace(4),
                         Text(
-                          "7.7",
+                          "${results!.voteAverage!}",
                           style: TextStyles.font10WhiteRegular,
                         ),
                       ],
                     ),
-                    verticalSpace(2),
+                    verticalSpace(1),
                     Text(
-                      "Dora anf the lost city of goal",
+                      results!.originalTitle!,
                       style: TextStyles.font10WhiteRegular,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
-                    verticalSpace(2),
+                    verticalSpace(1),
                     Text(
-                      "2018  R  1h 59m",
+                      results!.releaseDate!,
                       style: TextStyles.font8LighterGreyRegular,
                     )
                   ],

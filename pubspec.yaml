@@ -38,10 +38,7 @@ dependencies:
   #Customize Flutter's default white native splash screen with background color and splash image. Supports dark mode, full screen, and more.
   flutter_native_splash: ^2.3.6
   # Networking
-  dio: ^5.4.0
-  pretty_dio_logger: ^1.3.1
-  retrofit: ^4.0.3
-  retrofit_generator: ^8.0.4
+  http: ^1.1.2
   # State Management
   flutter_bloc: ^8.1.3
   # dependency injection 
@@ -59,6 +56,9 @@ dependencies:
   json_annotation: ^4.8.1
   #A carousel slider widget, support infinite scroll and custom child widget.
   carousel_slider: ^4.2.1
+  # Flutter library to load and cache network images. Can also be used with placeholder and error widgets.
+  cached_network_image: ^3.3.0
+
  
 
 
