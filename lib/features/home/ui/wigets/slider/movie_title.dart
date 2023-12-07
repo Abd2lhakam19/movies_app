@@ -1,9 +1,11 @@
+import 'package:application/features/home/data/models/popular_response.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/theming/text_styles.dart';
 
 class MovieTitle extends StatelessWidget {
-  const MovieTitle({super.key});
+  MovieTitle({super.key, this.results});
+  Results? results;
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +17,13 @@ class MovieTitle extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Dora and the lost city of gold",
+              results!.title ?? "",
               style: TextStyles.font14WhiteRegular,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
             Text(
-              "2019  PG-13  2h 7m",
+              results!.releaseDate ?? "",
               style: TextStyles.font10LightergreyRegular,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
