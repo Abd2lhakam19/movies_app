@@ -1,7 +1,7 @@
 import 'package:application/core/theming/app_colors.dart';
 import 'package:application/core/theming/text_styles.dart';
-import 'package:application/features/home/logic/cubit/recomended_cubit/recomended_cubit.dart';
-import 'package:application/features/home/logic/cubit/recomended_cubit/recomended_cubit_states.dart';
+import 'package:application/features/home/cubit/recomended_cubit/recomended_cubit.dart';
+import 'package:application/features/home/cubit/recomended_cubit/recomended_cubit_states.dart';
 import 'package:application/features/home/ui/widgets/recomended/movie_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,9 +1,13 @@
+import 'package:application/core/helper/api_constants.dart';
 import 'package:application/core/helper/app_assets.dart';
+import 'package:application/features/home/data/models/new_releases_response.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MoviesList extends StatelessWidget {
-  const MoviesList({super.key});
+  MoviesList(this.results);
+  List<Results>? results;
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +18,13 @@ class MoviesList extends StatelessWidget {
             return Stack(
               alignment: AlignmentDirectional.topStart,
               children: [
-                Image.asset(
-                  AppAssets.doraSliderFront,
+                CachedNetworkImage(
                   fit: BoxFit.cover,
+                  imageUrl:
+                      ApiConstants.baseImage + results![index].posterPath!,
+                  placeholder: (context, url) =>
+                      const Center(child: CircularProgressIndicator()),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
                 SizedBox(
                   height: 36.h,
@@ -33,7 +41,7 @@ class MoviesList extends StatelessWidget {
                 thickness: 2,
                 color: Colors.transparent,
               ),
-          itemCount: 10),
+          itemCount: results!.length),
     );
   }
 }

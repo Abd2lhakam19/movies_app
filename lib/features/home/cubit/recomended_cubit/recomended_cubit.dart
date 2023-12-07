@@ -1,5 +1,5 @@
 import 'package:application/features/home/data/api/api_manager.dart';
-import 'package:application/features/home/logic/cubit/recomended_cubit/recomended_cubit_states.dart';
+import 'package:application/features/home/cubit/recomended_cubit/recomended_cubit_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RecomendedCubit extends Cubit<RecomendedStates> {
