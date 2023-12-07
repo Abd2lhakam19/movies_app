@@ -1,5 +1,5 @@
 class PopularResponse {
-  String? status_code;
+  int? status_code;
   String? status_message;
   Dates? dates;
   int? page;

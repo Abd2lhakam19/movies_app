@@ -1,9 +1,11 @@
 import 'package:application/core/theming/app_colors.dart';
+import 'package:application/core/theming/text_styles.dart';
 import 'package:application/features/home/logic/cubit/home_cubit.dart';
 import 'package:application/features/home/logic/cubit/home_cubit_states.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'slider_content.dart';
 
@@ -66,8 +68,14 @@ class _TopHomeSliderState extends State<TopHomeSlider> {
             }
           case ErrorState():
             {
-              return Center(
-                child: Text(state.errorMessage),
+              return Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
+                child: Center(
+                  child: Text(
+                    state.errorMessage,
+                    style: TextStyles.font15WhiteRegular,
+                  ),
+                ),
               );
             }
         }

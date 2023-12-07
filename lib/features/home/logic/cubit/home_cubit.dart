@@ -8,7 +8,7 @@ class HomeCubit extends Cubit<HomeStates> {
     emit(LodaingState());
     try {
       var response = await ApiManager.getPopularMovies();
-      if (response.status_code == 'error') {
+      if (response.status_code == 7 || response.status_code == 34) {
         emit(ErrorState(response.status_message ?? ""));
       } else {
         emit(SuccessState(response.results ?? []));

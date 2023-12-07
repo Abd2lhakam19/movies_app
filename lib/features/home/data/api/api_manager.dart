@@ -14,7 +14,7 @@ class ApiManager {
       var json = jsonDecode(bodyString);
       return PopularResponse.fromJson(json);
     } catch (e) {
-      throw (e);
+      rethrow;
     }
   }
 }
