@@ -1,15 +1,15 @@
 import 'package:application/features/home/data/models/popular_response.dart';
 
-sealed class HomeStates {}
+sealed class SliderState {}
 
-class SuccessState extends HomeStates {
+class SuccessState extends SliderState {
   List<Results> resultList;
   SuccessState(this.resultList);
 }
 
-class LodaingState extends HomeStates {}
+class LodaingState extends SliderState {}
 
-class ErrorState extends HomeStates {
+class ErrorState extends SliderState {
   String errorMessage;
   ErrorState(this.errorMessage);
 }

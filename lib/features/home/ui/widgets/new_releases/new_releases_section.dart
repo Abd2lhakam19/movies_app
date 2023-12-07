@@ -2,7 +2,7 @@ import 'package:application/core/helper/app_strings.dart';
 import 'package:application/core/helper/spacing.dart';
 import 'package:application/core/theming/app_colors.dart';
 import 'package:application/core/theming/text_styles.dart';
-import 'package:application/features/home/ui/wigets/new_releases/movies_list.dart';
+import 'package:application/features/home/ui/widgets/new_releases/movies_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
