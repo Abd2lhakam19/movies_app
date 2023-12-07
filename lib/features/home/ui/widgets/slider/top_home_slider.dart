@@ -1,12 +1,12 @@
 import 'package:application/core/theming/app_colors.dart';
 import 'package:application/core/theming/text_styles.dart';
-import 'package:application/features/home/logic/cubit/home_cubit.dart';
-import 'package:application/features/home/logic/cubit/home_cubit_states.dart';
+import 'package:application/features/home/logic/cubit/slider_cubit/home_cubit.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../logic/cubit/slider_cubit/slider_cubit_states.dart';
 import 'slider_content.dart';
 
 class TopHomeSlider extends StatefulWidget {
@@ -17,18 +17,18 @@ class TopHomeSlider extends StatefulWidget {
 }
 
 class _TopHomeSliderState extends State<TopHomeSlider> {
-  var homeCubit = HomeCubit();
+  var sliderCubit = SliderCubit();
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    homeCubit.getPopularMovies();
+    sliderCubit.getPopularMovies();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeCubit, HomeStates>(
-      bloc: homeCubit,
+    return BlocBuilder<SliderCubit, SliderState>(
+      bloc: sliderCubit,
       builder: (context, state) {
         switch (state) {
           case LodaingState():
