@@ -3,15 +3,15 @@ import 'package:application/core/helper/spacing.dart';
 import 'package:application/core/routing/routes.dart';
 import 'package:application/core/theming/app_colors.dart';
 import 'package:application/core/theming/text_styles.dart';
-import 'package:application/features/home/data/models/recomended_response.dart';
+import 'package:application/features/home/data/models/similar_response.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/helper/api_constants.dart';
 
-class MovieListItem extends StatelessWidget {
-  const MovieListItem({super.key, this.results});
+class MoviListSimilarItem extends StatelessWidget {
+  const MoviListSimilarItem({super.key, required this.results});
   final Results? results;
 
   @override

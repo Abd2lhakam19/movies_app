@@ -1,5 +1,6 @@
 import 'package:application/core/helper/app_strings.dart';
 import 'package:application/core/theming/app_colors.dart';
+import 'package:application/core/theming/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -17,6 +18,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
         unselectedItemColor: AppColors.white,
         backgroundColor: AppColors.darkerGrey,
         type: BottomNavigationBarType.fixed,
+        selectedLabelStyle: TextStyles.font10YellowRegular,
+        unselectedLabelStyle: TextStyles.font10WhiteRegular,
+        selectedIconTheme: IconThemeData(size: 24),
+        unselectedIconTheme: IconThemeData(size: 24),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -29,12 +34,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
             backgroundColor: AppColors.darkerGrey,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.browse_gallery),
+            icon: Icon(Icons.movie),
             label: AppStrings.browse,
             backgroundColor: AppColors.darkerGrey,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.watch_later),
+            icon: Icon(Icons.watch_later_rounded),
             label: AppStrings.watchList,
             backgroundColor: AppColors.darkerGrey,
           ),

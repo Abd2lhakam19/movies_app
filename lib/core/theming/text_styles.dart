@@ -24,5 +24,17 @@ class TextStyles {
       font8LighterGreyRegular = TextStyle(
           color: AppColors.lighterGrey,
           fontSize: 8.sp,
+          fontWeight: FontWeightHelper.regular),
+      font10YellowRegular = TextStyle(
+          color: AppColors.yellowColor,
+          fontSize: 10.sp,
+          fontWeight: FontWeightHelper.regular),
+      font20WightRegular = TextStyle(
+          color: AppColors.white,
+          fontSize: 20.sp,
+          fontWeight: FontWeightHelper.regular),
+      font18WightRegular = TextStyle(
+          color: AppColors.white,
+          fontSize: 18.sp,
           fontWeight: FontWeightHelper.regular);
 }

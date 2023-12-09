@@ -1,3 +1,4 @@
+import 'package:application/core/routing/routes.dart';
 import 'package:application/core/theming/app_colors.dart';
 import 'package:application/core/theming/text_styles.dart';
 import 'package:application/features/home/cubit/slider_cubit/slider_cubit.dart';
@@ -44,8 +45,14 @@ class _TopHomeSliderState extends State<TopHomeSlider> {
                 itemCount: result.length,
                 itemBuilder:
                     (BuildContext context, int itemIndex, int pageViewIndex) {
-                  return SliderContent(
-                    results: result[itemIndex],
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(Routes.movieDetails,
+                          arguments: result[itemIndex].id.toString());
+                    },
+                    child: SliderContent(
+                      results: result[itemIndex],
+                    ),
                   );
                 },
                 options: CarouselOptions(
