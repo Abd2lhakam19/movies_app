@@ -1,3 +1,4 @@
+import 'package:application/app_layout.dart';
 import 'package:application/core/routing/routes.dart';
 import 'package:application/features/home/ui/home_screen.dart';
 import 'package:application/features/movie_details/movie_details.dart';
@@ -7,9 +8,9 @@ class AppRouter {
   Route generateRoute(RouteSettings settings) {
     final args = settings.arguments;
     switch (settings.name) {
-      case Routes.home:
+      case Routes.appLayout:
         return MaterialPageRoute(
-          builder: (context) => const HomeScreen(),
+          builder: (context) => const AppLayout(),
         );
       case Routes.movieDetails:
         return MaterialPageRoute(

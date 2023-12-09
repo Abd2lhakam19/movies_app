@@ -5,7 +5,6 @@ import 'package:application/features/home/data/models/movie_details_response.dar
 import 'package:application/features/home/ui/home_screen.dart';
 import 'package:application/features/movie_details/cubit/movie_details_cubit.dart';
 import 'package:application/features/movie_details/cubit/movie_details_states.dart';
-import 'package:application/features/movie_details/widgets/more_like_this.dart';
 import 'package:application/features/movie_details/widgets/movies_details_top_section.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';

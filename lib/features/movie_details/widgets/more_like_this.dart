@@ -8,8 +8,8 @@ import '../../../core/theming/app_colors.dart';
 import '../../../core/theming/text_styles.dart';
 
 class MoreLikeThis extends StatelessWidget {
-  MoreLikeThis({super.key, required this.movieId});
-  String movieId;
+  const MoreLikeThis({super.key, required this.movieId});
+  final String movieId;
   @override
   Widget build(BuildContext context) {
     return Container(

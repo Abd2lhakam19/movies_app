@@ -1,3 +1,3 @@
 class Routes {
-  static const String home = "/home", movieDetails = "moveiDetails";
+  static const String movieDetails = "moveiDetails", appLayout = "/home";
 }
