@@ -1,9 +1,11 @@
 import 'dart:convert';
 
 import 'package:application/core/helper/api_constants.dart';
+import 'package:application/features/home/data/models/movie_details_response.dart';
 import 'package:application/features/home/data/models/new_releases_response.dart';
 import 'package:application/features/home/data/models/popular_response.dart';
 import 'package:application/features/home/data/models/recomended_response.dart';
+import 'package:application/features/home/data/models/similar_response.dart';
 import 'package:http/http.dart' as http;
 
 class ApiManager {
@@ -44,5 +46,27 @@ class ApiManager {
     } catch (e) {
       rethrow;
     }
+  }
+
+  static Future<MovieDetailsResponse> getMovieDetails(String movieId) async {
+    Uri url = Uri.https(
+        ApiConstants.baseUrl,
+        "${ApiConstants.movieDetails}/$movieId",
+        {'api_key': ApiConstants.apiKey});
+    var response = await http.get(url);
+    var bodyString = response.body;
+    var json = jsonDecode(bodyString);
+    return MovieDetailsResponse.fromJson(json);
+  }
+
+  static Future<SimilarResponse> getSimilarMovieDetails(String movieId) async {
+    Uri url = Uri.https(
+        ApiConstants.baseUrl,
+        "${ApiConstants.movieDetails}/$movieId/similar",
+        {'api_key': ApiConstants.apiKey});
+    var response = await http.get(url);
+    var bodyString = response.body;
+    var json = jsonDecode(bodyString);
+    return SimilarResponse.fromJson(json);
   }
 }
