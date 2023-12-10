@@ -14,3 +14,9 @@ A new Flutter project displaying movies with a lot of features
   ![movie_details](https://github.com/Abd2lhakam19/movies_app/assets/105023622/2bde0808-2b40-4ac4-b00a-afaacaef49b0)
 
 
+   ▶️ Search Screen 
+
+   ![search_screen](https://github.com/Abd2lhakam19/movies_app/assets/105023622/efafdd32-f991-4336-a78e-0c1cfe157a1a)
+
+
+
