@@ -1,3 +1,4 @@
+import 'package:application/app_layout.dart';
 import 'package:application/core/helper/spacing.dart';
 import 'package:application/core/theming/app_colors.dart';
 import 'package:application/core/theming/text_styles.dart';
@@ -11,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/helper/api_constants.dart';
+import 'widgets/more_like_this.dart';
 
 class MovieDetails extends StatefulWidget {
   const MovieDetails({super.key, required this.movieId});
@@ -69,9 +71,7 @@ class _MovieDetailsState extends State<MovieDetails> {
                   backgroundColor: Colors.transparent,
                   leading: IconButton(
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
-                      ));
+                      Navigator.pop(context);
                     },
                     icon: const Icon(Icons.arrow_back),
                     color: Colors.white,
@@ -92,7 +92,7 @@ class _MovieDetailsState extends State<MovieDetails> {
                       ),
                       MovieDetailsTopSection(movieDetails: movieDetails),
                       verticalSpace(18),
-                      //MoreLikeThis(movieId: movieDetails.id.toString()),
+                      MoreLikeThis(movieId: movieDetails.id.toString()),
                     ],
                   ),
                 ),

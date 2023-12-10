@@ -51,7 +51,7 @@ class ApiManager {
   static Future<MovieDetailsResponse> getMovieDetails(String movieId) async {
     Uri url = Uri.https(
         ApiConstants.baseUrl,
-        "${ApiConstants.movieDetails}/$movieId",
+        "${ApiConstants.movieDetailsApi}/$movieId",
         {'api_key': ApiConstants.apiKey});
     var response = await http.get(url);
     var bodyString = response.body;
@@ -62,7 +62,7 @@ class ApiManager {
   static Future<SimilarResponse> getSimilarMovieDetails(String movieId) async {
     Uri url = Uri.https(
         ApiConstants.baseUrl,
-        "${ApiConstants.movieDetails}/$movieId/similar",
+        "${ApiConstants.movieDetailsApi}/$movieId/similar",
         {'api_key': ApiConstants.apiKey});
     var response = await http.get(url);
     var bodyString = response.body;

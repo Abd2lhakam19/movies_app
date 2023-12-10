@@ -1,6 +1,5 @@
 import 'package:application/app_layout.dart';
 import 'package:application/core/routing/routes.dart';
-import 'package:application/features/home/ui/home_screen.dart';
 import 'package:application/features/movie_details/movie_details.dart';
 import 'package:flutter/material.dart';
 

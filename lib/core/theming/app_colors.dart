@@ -9,5 +9,6 @@ class AppColors {
       moreLightGrey = Color(0xff343534),
       darkerGrey = Color(0xff1A1A1A),
       whiteGrey = Color(0xffCBCBCB),
-      whiterGrey = Color(0xff514F4F);
+      whiterGrey = Color(0xff514F4F),
+      deepGrey = Color(0xff514F4F);
 }
