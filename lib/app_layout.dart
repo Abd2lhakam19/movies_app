@@ -19,44 +19,47 @@ class _AppLayoutState extends State<AppLayout> {
   int index = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: screens[index],
-      bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: AppColors.yellowColor,
-          unselectedItemColor: AppColors.white,
-          backgroundColor: AppColors.darkerGrey,
-          type: BottomNavigationBarType.shifting,
-          selectedLabelStyle: TextStyles.font10YellowRegular,
-          unselectedLabelStyle: TextStyles.font10WhiteRegular,
-          selectedIconTheme: const IconThemeData(size: 24),
-          unselectedIconTheme: const IconThemeData(size: 24),
-          onTap: (value) {
-            index = value;
-            setState(() {});
-          },
-          currentIndex: index,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: AppStrings.home,
-              backgroundColor: AppColors.darkerGrey,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: AppStrings.search,
-              backgroundColor: AppColors.darkerGrey,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.movie),
-              label: AppStrings.browse,
-              backgroundColor: AppColors.darkerGrey,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.watch_later_rounded),
-              label: AppStrings.watchList,
-              backgroundColor: AppColors.darkerGrey,
-            ),
-          ]),
+    return SafeArea(
+      child: Scaffold(
+        body: screens[index],
+        bottomNavigationBar: BottomNavigationBar(
+            selectedItemColor: AppColors.yellowColor,
+            unselectedItemColor: AppColors.white,
+            backgroundColor: AppColors.darkerGrey,
+            type: BottomNavigationBarType.shifting,
+            selectedLabelStyle: TextStyles.font10YellowRegular,
+            unselectedLabelStyle: TextStyles.font10WhiteRegular,
+            selectedIconTheme: const IconThemeData(size: 24),
+            unselectedIconTheme: const IconThemeData(size: 24),
+            elevation: 7,
+            onTap: (value) {
+              index = value;
+              setState(() {});
+            },
+            currentIndex: index,
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: AppStrings.home,
+                backgroundColor: AppColors.darkerGrey,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                label: AppStrings.search,
+                backgroundColor: AppColors.darkerGrey,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.movie),
+                label: AppStrings.browse,
+                backgroundColor: AppColors.darkerGrey,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.watch_later_rounded),
+                label: AppStrings.watchList,
+                backgroundColor: AppColors.darkerGrey,
+              ),
+            ]),
+      ),
     );
   }
 

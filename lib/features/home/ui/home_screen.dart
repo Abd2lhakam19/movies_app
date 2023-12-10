@@ -9,19 +9,17 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              verticalSpace(13),
-              const TopHomeSlider(),
-              verticalSpace(24),
-              const NewReleasesSection(),
-              verticalSpace(30),
-              const RecomendedSection(),
-            ],
-          ),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            verticalSpace(13),
+            const TopHomeSlider(),
+            verticalSpace(24),
+            const NewReleasesSection(),
+            verticalSpace(30),
+            const RecomendedSection(),
+          ],
         ),
       ),
     );
